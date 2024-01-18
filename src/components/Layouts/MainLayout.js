@@ -6,7 +6,6 @@ const MainLayout = ({ children }) => {
     <>
       <div className='login'>
         {children}
-        {/* <img className="vectorimg" src={images.VECTOR_IMAGE} alt="Vector Image" /> */}
         <img className='w-100' src={images.VECTOR2_IMAGE} alt='Vector2' />
       </div>
     </>

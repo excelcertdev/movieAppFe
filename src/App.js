@@ -14,7 +14,6 @@ function App() {
       <ToastContainer />
       <Router>
         <Routes>
-          {/* <Route path="*" element={<NotFound />} /> */}
           <Route path='/' element={<MainLayout><LoginForm /></MainLayout>} />
           <Route path='/updateMovie/:id' element={<MainLayout><UpdateMovie /></MainLayout>} />
           <Route path='/movieList' element={<MainLayout><MovieList /></MainLayout>} />

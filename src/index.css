@@ -206,7 +206,49 @@ input[type="text"]::placeholder {
   border-radius: 6px;
 }
 
-@media only screen and (max-width: 700px) {
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+}
+
+.path {
+  stroke: #4285f4;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+  }
+  50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+  }
+  100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+  }
+}
+
+
+@media only screen and (min-width: 540px) and (max-width: 700px)  {
   .top-container{
     height: auto;
     width: 100%;
@@ -252,67 +294,277 @@ input[type="text"]::placeholder {
   .inner2-div {
     padding: 0px;
     position: absolute;
-    width: 85%;
-    top: 72%;
-  }
-
-}
-
-@media only screen and (max-width: 600px){
-  .inner2-div {
     width: 95%;
+    top: 93%;
   }
+
 }
 
-@media only screen and (max-width: 431px){
+
+@media only screen and (min-width: 450px) and (max-width: 539px)  {
+  .top-container{
+    height: auto;
+    width: 100%;
+  }
+  .custom-width-216{
+    width: 100%;
+  }
+  .inner-div{
+    flex-direction: column-reverse;
+  }
+  .insert-image{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .inner2-div{
+    padding: 0px;
+  }
+  .custom-btn{
+    padding: 10px;
+  }
+  .cards{
+    height: 300px;
+    width: 180px;
+  }
+  .preview-image-list {
+    height: 200px;
+  }
+  .addIcon{
+    width: 24px;
+    height: 24px;
+  }
+  .logout{
+    display: none;
+  }
+  .logout-icon{
+    width: 18px;
+    height: 18px;
+  }
+  h2{
+    font-size: 32px;
+  }
+
   .inner2-div {
-    bottom: 20%;
+    padding: 0px;
+    position: absolute;
+    width: 95%;
+    top: 75%;
   }
+
 }
 
-@media only screen and (max-width: 380px){
+
+@media only screen and (min-width: 410px) and (max-width: 420px)  {
+  .top-container{
+    height: auto;
+    width: 100%;
+  }
+  .custom-width-216{
+    width: 100%;
+  }
+  .inner-div{
+    flex-direction: column-reverse;
+  }
+  .insert-image{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .inner2-div{
+    padding: 0px;
+  }
+  .custom-btn{
+    padding: 10px;
+  }
+  .cards{
+    height: 300px;
+    width: 180px;
+  }
+  .preview-image-list {
+    height: 200px;
+  }
+  .addIcon{
+    width: 24px;
+    height: 24px;
+  }
+  .logout{
+    display: none;
+  }
+  .logout-icon{
+    width: 18px;
+    height: 18px;
+  }
+  h2{
+    font-size: 32px;
+  }
   .inner2-div {
-    top: 66%;
+    padding: 0px;
+    position: absolute;
+    width: 95%;
+    top: 74%;
+  }
+
+}
+
+
+@media only screen and (min-width: 430px) and (max-width: 449px)  {
+  .top-container{
+    height: auto;
+    width: 100%;
+  }
+  .custom-width-216{
+    width: 100%;
+  }
+  .inner-div{
+    flex-direction: column-reverse;
+  }
+  .insert-image{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .inner2-div{
+    padding: 0px;
+  }
+  .custom-btn{
+    padding: 10px;
+  }
+  .cards{
+    height: 300px;
+    width: 180px;
+  }
+  .preview-image-list {
+    height: 200px;
+  }
+  .addIcon{
+    width: 24px;
+    height: 24px;
+  }
+  .logout{
+    display: none;
+  }
+  .logout-icon{
+    width: 18px;
+    height: 18px;
+  }
+  h2{
+    font-size: 32px;
+  }
+  .inner2-div {
+    padding: 0px;
+    position: absolute;
+    width: 95%;
+    top: 70%;
   }
 }
 
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.spinner {
-  animation: rotate 2s linear infinite;
-  margin: -25px 0 0 -25px;
-  width: 50px;
-  height: 50px;
-}
-
-.path {
-  stroke: #4285f4;
-  stroke-linecap: round;
-  animation: dash 1.5s ease-in-out infinite;
-}
-
-@keyframes rotate {
-  100% {
-      transform: rotate(360deg);
+@media only screen and (min-width: 375px) and (max-width: 399px)  {
+  .top-container{
+    height: auto;
+    width: 100%;
   }
+  .custom-width-216{
+    width: 100%;
+  }
+  .inner-div{
+    flex-direction: column-reverse;
+  }
+  .insert-image{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .inner2-div{
+    padding: 0px;
+  }
+  .custom-btn{
+    padding: 10px;
+  }
+  .cards{
+    height: 300px;
+    width: 180px;
+  }
+  .preview-image-list {
+    height: 200px;
+  }
+  .addIcon{
+    width: 24px;
+    height: 24px;
+  }
+  .logout{
+    display: none;
+  }
+  .logout-icon{
+    width: 18px;
+    height: 18px;
+  }
+  h2{
+    font-size: 32px;
+  }
+
+  .inner2-div {
+    padding: 0px;
+    position: absolute;
+    width: 95%;
+    top: 98%;
+  }
+
 }
 
-@keyframes dash {
-  0% {
-      stroke-dasharray: 1, 150;
-      stroke-dashoffset: 0;
+@media only screen and (min-width: 360px) and (max-width: 374px)  {
+  .top-container{
+    height: auto;
+    width: 100%;
   }
-  50% {
-      stroke-dasharray: 90, 150;
-      stroke-dashoffset: -35;
+  .custom-width-216{
+    width: 100%;
   }
-  100% {
-      stroke-dasharray: 90, 150;
-      stroke-dashoffset: -124;
+  .inner-div{
+    flex-direction: column-reverse;
+  }
+  .insert-image{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .inner2-div{
+    padding: 0px;
+  }
+  .custom-btn{
+    padding: 10px;
+  }
+  .cards{
+    height: 300px;
+    width: 180px;
+  }
+  .preview-image-list {
+    height: 200px;
+  }
+  .addIcon{
+    width: 24px;
+    height: 24px;
+  }
+  .logout{
+    display: none;
+  }
+  .logout-icon{
+    width: 18px;
+    height: 18px;
+  }
+  h2{
+    font-size: 32px;
+  }
+
+  .inner2-div {
+    padding: 0px;
+    position: absolute;
+    width: 95%;
+    top: 90%;
+  }
+  
+}
+
+@media only screen and (min-width: 390px) and (max-width: 399px)  {
+  .inner2-div {
+    padding: 0px;
+    position: absolute;
+    width: 95%;
+    top: 77%;
   }
 }
