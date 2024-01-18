@@ -1,0 +1,17 @@
+{
+    "sign-in": "Sign In",
+    "remember-me": "Remember me",
+    "login": "Login",
+    "my-movies": "My movies",
+    "logout": "Logout",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "publishing-year": "Publishing year",
+    "next": "Next",
+    "prev": "Prev",
+    "create-new-movie": "Create a new Movie",
+    "add-new-movie": "Add new movie",
+    "your-movie-list-is-empty": "Your Movie List is empty",
+    "update": "Update"
+  }

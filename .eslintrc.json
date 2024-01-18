@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "globals": {
+    "process": "readonly",
+    "React": "writable"
+  },
+  "rules": {
+    "react/prop-types": "off", // Disable prop-types as you may not need them (if using TypeScript, PropTypes are not necessary)
+    "react/react-in-jsx-scope": "off", // React is automatically in scope with newer versions
+    "react/jsx-uses-react": "off", // React is automatically used with newer versions
+    "react/jsx-uses-vars": "error", // Ensure that variables used in JSX are declared
+    "no-unused-vars": "warn", // Warn about unused variables
+    "no-alert": "warn", // Warn about alert statements
+    "no-multi-spaces": "warn"
+  }
+}
