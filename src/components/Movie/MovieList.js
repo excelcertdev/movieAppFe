@@ -267,7 +267,7 @@ const MovieList = () => {
             </div>
           )}
         </div>
-      ) : (!loading && search.length > 0 && movieList.length === 0) ? (
+      ) : (!loading && search.length === 0 && movieList.length === 0) ? (
         <EmptyList handleAddMovie={handleAddMovie} />
       ) : null}
     </>
