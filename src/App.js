@@ -7,6 +7,7 @@ import CreateMovie from './components/Movie/CreateMovie';
 import UpdateMovie from './components/Movie/UpdateMovie';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <ToastContainer />
       <Router>
         <Routes>
+          <Route path="*" element={<NotFound />} />
           <Route path='/' element={<MainLayout><LoginForm /></MainLayout>} />
           <Route path='/updateMovie/:id' element={<MainLayout><UpdateMovie /></MainLayout>} />
           <Route path='/movieList' element={<MainLayout><MovieList /></MainLayout>} />

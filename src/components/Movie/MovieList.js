@@ -22,11 +22,17 @@ const MovieList = () => {
   const [show, setShow] = useState(false);
   const [movieId, setMovieId] = useState(null);
   const [selectedId, setSelectedId] = useState('')
-  
+  const userData = localStorage.getItem('userData')
   const movie = useSelector((state) => state.movie);
 
   let limit = 8;
   const { t } = useTranslation();
+
+  useEffect(()=>{
+    if(!userData){
+      navigate('/')
+    }
+  },[userData])
 
   useEffect(() => {
     const movieObj = {

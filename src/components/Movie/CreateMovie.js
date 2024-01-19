@@ -40,57 +40,61 @@ const CreateMovie = () => {
       <ToastContainer />
 
       <div className="top-container container py-5">
-        <h2>{t("create-new-movie")}</h2>
-        <div className="inner-div py-5">
-          <div className="w-100">
-            <div className="insert-image" {...getRootProps()}>
-              {droppedImage ? (
-                <img
-                  src={droppedImage}
-                  alt="dropped"
-                  className="preview-image"
-                />
-              ) : (
-                <>
-                  <img src={images.DROP} className="text-light" alt="drop" />
-                  <p className="text-light">Drop the image here</p>
-                </>
-              )}
-              <input {...getInputProps()} accept="image/*" />
-            </div>
+  <h2>{t("create-new-movie")}</h2>
+  <div className="container-fluid">
+    <div className="row">
+      {/* Left Column - Image Drop Zone */}
+      <div className="col-md-6 py-5">
+        <div className="w-100">
+          <div className="insert-image" {...getRootProps()}>
+            {droppedImage ? (
+              <img src={droppedImage} alt="dropped" className="preview-image" />
+            ) : (
+              <>
+                <img src={images.DROP} className="text-light" alt="drop" />
+                <p className="text-light">Drop the image here</p>
+              </>
+            )}
+            <input {...getInputProps()} accept="image/*" />
           </div>
-          <div className="w-100">
-            <Formik
-              initialValues={{ title: "", publishingYear: "" }}
-              validate={(values) => {
-                const errors = {};
-                if (!values.title) {
-                  errors.title = "Title is Required";
-                }
+        </div>
+      </div>
 
-                if (!values.publishingYear) {
-                  errors.publishingYear = "Publishing Year is Required";
-                } else if (!/^\d+$/.test(values.publishingYear)) {
-                  errors.publishingYear = "Publishing Year must be a number";
-                }
+      {/* Right Column - Form */}
+      <div className="col-md-6 py-5">
+        <div className="w-100">
+          <Formik
+            initialValues={{ title: "", publishingYear: "" }}
+            validate={(values) => {
+              const errors = {};
+              if (!values.title) {
+                errors.title = "Title is Required";
+              }
 
-                return errors;
-              }}
-              onSubmit={async (values) => {
-                const formData = new FormData();
-                Object.keys(values).forEach((key) => {
-                  formData.append(key, values[key]);
-                });
+              if (!values.publishingYear) {
+                errors.publishingYear = "Publishing Year is Required";
+              } else if (!/^\d+$/.test(values.publishingYear)) {
+                errors.publishingYear = "Publishing Year must be a number";
+              }
 
-                // Append the file to FormData
-                formData.append("file", file);
-                await dispatch(addMovie(formData));
-                navigate("/movieList");
-              }}
-            >
-              {({ errors, touched, handleChange, handleSubmit }) => (
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group controlId="Title" className="mb-4">
+              return errors;
+            }}
+            onSubmit={async (values) => {
+              const formData = new FormData();
+              Object.keys(values).forEach((key) => {
+                formData.append(key, values[key]);
+              });
+
+              // Append the file to FormData
+              formData.append("file", file);
+              await dispatch(addMovie(formData));
+              navigate("/movieList");
+            }}
+          >
+            {({ errors, touched, handleChange, handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
+                {/* ... (rest of the form code remains unchanged) */}
+                <Form.Group controlId="Title" className="mb-4">
                     <Form.Control
                       onChange={handleChange}
                       name="title"
@@ -121,7 +125,7 @@ const CreateMovie = () => {
                     />
                   </Form.Group>
 
-                  <div className="d-flex justify-content-center align-items-center mt-5 inner2-div">
+                  <div className="d-flex justify-content-center align-items-center mt-5">
                     <button
                       className="custom-btn"
                       style={{
@@ -137,12 +141,15 @@ const CreateMovie = () => {
                       Submit
                     </button>
                   </div>
-                </Form>
-              )}
-            </Formik>
-          </div>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
     </>
   );
 };
